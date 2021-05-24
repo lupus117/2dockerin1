@@ -1,0 +1,26 @@
+version: '3.9'
+services:
+    rust:
+        profiles:
+            - all
+            - rust
+        build:
+            context: rust/
+            dockerfile: Dockerfile
+        ports:
+            - 3010:3010
+        volumes:
+            - ./www:/var/www/
+
+    node:
+        profiles:
+            - all
+            - node
+        build:
+            context: node/
+            dockerfile: Dockerfile
+        ports:
+            - 3030:3030
+        volumes:
+            - ./www:/var/www/
+
