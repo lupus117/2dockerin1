@@ -1,5 +1,7 @@
 FROM node:lts-alpine
 
+EXPOSE 8000
+
 WORKDIR /usr/src/node
 
 ADD main.js /usr/src/node/main.js
